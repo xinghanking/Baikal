@@ -1,5 +1,4 @@
 <?php
-
 /***************************************************************
 *  Copyright notice
 *
@@ -27,7 +26,6 @@
 
 use Symfony\Component\Yaml\Yaml;
 
-ini_set("session.cookie_httponly", 1);
 ini_set("display_errors", 0);
 ini_set("log_errors", 1);
 
@@ -45,6 +43,7 @@ if (file_exists(getcwd() . "/Core")) {
 if (!file_exists(PROJECT_PATH_ROOT . 'vendor/')) {
     exit('<h1>Incomplete installation</h1><p>Ba&iuml;kal dependencies have not been installed. If you are a regular user, this means that you probably downloaded the wrong zip file.</p><p>To install the dependencies manually, execute "<strong>composer install</strong>" in the Ba&iuml;kal root folder.</p>');
 }
+require PROJECT_PATH_ROOT . 'Core/comm.php';
 require PROJECT_PATH_ROOT . 'vendor/autoload.php';
 
 # Bootstrapping Flake
